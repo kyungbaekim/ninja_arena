@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Adding new users</title>
+    <link rel="stylesheet" type="text/css" href="ninja_battle.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-2.2.2.js'></script>
+    <script type="text/javascript">
+        function setBackImg1(){
+          $('#beach').click(function(){
+            $('body').attr('background', 'images/beach.jpg');
+            $('#beach').unbind();
+          })
+        }
+
+        function setBackImg2(){
+          $('#planet').click(function(){
+            $('body').attr('background', 'images/calvinandhobbes.jpg');
+            $('#planet').unbind();
+          })
+        }
+
+        function setBackImg3(){
+          $('#dojo').click(function(){
+            $('body').attr('background', 'images/dojo.jpg');
+            $('#dojo').unbind();
+          })
+        }
+
+        function setBackImg4(){
+          $('#forest').click(function(){
+            $('body').attr('background', 'images/forest.jpg');
+            $('#forest').unbind();
+          })
+        }
+
+        function setBackImg5(){
+          $('#matrix').click(function(){
+            $('body').attr('background', 'images/matrix.jpg');
+            $('#matrix').unbind();
+          })
+        }
+
+        function setBackImg6(){
+          $('#snow').click(function(){
+            $('body').attr('background', 'images/snow.jpg');
+            $('#snow').unbind();
+          })
+        }
+
+        $(document).ready(function(){
+          $('#beach').hover(function(){
+            $('body').attr('background', 'images/beach.jpg');
+            setBackImg1();
+          }, function(){$('body').attr('background', '');
+          // setBackImg1();
+          });
+          $('#planet').hover(function(){
+            $('body').attr('background', 'images/calvinandhobbes.jpg');
+            setBackImg2();
+          }, function(){$('body').attr('background', '');
+          });
+          $('#dojo').hover(function(){
+            $('body').attr('background', 'images/dojo.jpg');
+            setBackImg3();
+          }, function(){$('body').attr('background', '');
+          });
+          $('#forest').hover(function(){
+            $('body').attr('background', 'images/forest.jpg');
+            setBackImg4();
+          }, function(){$('body').attr('background', '');
+          });
+          $('#matrix').hover(function(){
+            $('body').attr('background', 'images/matrix.jpg');
+            setBackImg5();
+          }, function(){$('body').attr('background', '');
+          });
+          $('#snow').hover(function(){
+            $('body').attr('background', 'images/snow.jpg');
+            setBackImg6();
+          }, function(){$('body').attr('background', '');
+          });
+
+          $(document).on('click', '#beach', function(){
+            $('body').attr('background', 'images/beach.jpg');
+          });
+        });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="back_img">
+        <div id="select">
+          <h1>Select Arena</h1>
+          <button id="beach">beach</button>
+          <button id="planet">planet</button>
+          <button id="dojo">dojo</button><br>
+          <button id="forest">forest</button>
+          <button id="matrix">matrix</button>
+          <button id="snow">snow</button>
+        </div>
+      </div>
+    </div> <!--end of wrapper-->
+  </body>
+</html>

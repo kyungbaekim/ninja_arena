@@ -1,0 +1,41 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+p{
+  font-family: tahoma, sans-serif;
+  font-size: 12px;
+}
+h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+body{
+  background-color: black;
+}
+.wrapper{
+  width: 100%;
+  /*background-color: black;*/
+  margin: 20px auto;
+}
+#back_img{
+  width: 1440px;
+  height: 900px;
+  /*background-color: lightgray;*/
+  /*background-image: url("images/beach.jpg");*/
+}
+#select{
+  width: 300px;
+  height: 200px;
+  background-color: gray;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0px auto;
+}
+  #select h1{
+    padding-top: 40px;
+  }
+button{
+  font-size: 16px;
+  margin: 5px;
+}
