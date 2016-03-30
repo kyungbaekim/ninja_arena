@@ -1,87 +1,35 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Adding new users</title>
+    <title>Ninja Battle</title>
     <link rel="stylesheet" type="text/css" href="ninja_battle.css">
     <script type="text/javascript" src='http://code.jquery.com/jquery-2.2.2.js'></script>
     <script type="text/javascript">
-        function setBackImg1(){
-          $('#beach').click(function(){
-            $('body').attr('background', 'images/beach.jpg');
-            $('#beach').unbind();
-          })
-        }
-
-        function setBackImg2(){
-          $('#planet').click(function(){
-            $('body').attr('background', 'images/calvinandhobbes.jpg');
-            $('#planet').unbind();
-          })
-        }
-
-        function setBackImg3(){
-          $('#dojo').click(function(){
-            $('body').attr('background', 'images/dojo.jpg');
-            $('#dojo').unbind();
-          })
-        }
-
-        function setBackImg4(){
-          $('#forest').click(function(){
-            $('body').attr('background', 'images/forest.jpg');
-            $('#forest').unbind();
-          })
-        }
-
-        function setBackImg5(){
-          $('#matrix').click(function(){
-            $('body').attr('background', 'images/matrix.jpg');
-            $('#matrix').unbind();
-          })
-        }
-
-        function setBackImg6(){
-          $('#snow').click(function(){
-            $('body').attr('background', 'images/snow.jpg');
-            $('#snow').unbind();
+        function setBackImg(){
+          $('button').click(function(){
+            $('#back_img').css('background-image', 'url('+$(this).val()+')');
+            $(this).unbind();
+            $('#players').show();
+            $('#ninja').show();
+            $('#select').hide();
           })
         }
 
         $(document).ready(function(){
-          $('#beach').hover(function(){
-            $('body').attr('background', 'images/beach.jpg');
-            setBackImg1();
-          }, function(){$('body').attr('background', '');
-          // setBackImg1();
-          });
-          $('#planet').hover(function(){
-            $('body').attr('background', 'images/calvinandhobbes.jpg');
-            setBackImg2();
-          }, function(){$('body').attr('background', '');
-          });
-          $('#dojo').hover(function(){
-            $('body').attr('background', 'images/dojo.jpg');
-            setBackImg3();
-          }, function(){$('body').attr('background', '');
-          });
-          $('#forest').hover(function(){
-            $('body').attr('background', 'images/forest.jpg');
-            setBackImg4();
-          }, function(){$('body').attr('background', '');
-          });
-          $('#matrix').hover(function(){
-            $('body').attr('background', 'images/matrix.jpg');
-            setBackImg5();
-          }, function(){$('body').attr('background', '');
-          });
-          $('#snow').hover(function(){
-            $('body').attr('background', 'images/snow.jpg');
-            setBackImg6();
-          }, function(){$('body').attr('background', '');
+          $('#players').hide();
+          $('#ninja').hide();
+          $('button').hover(function(){
+            $('#back_img').css('background-image', 'url('+$(this).val()+')');
+            setBackImg();
+          }, function(){$('#back_img').css('background-image', '');
           });
 
-          $(document).on('click', '#beach', function(){
-            $('body').attr('background', 'images/beach.jpg');
+          $('#player1').click(function(){
+            $('div.display1').html("<div><img src="+$(this).val()+" width=200px height=200px></div>");
+          });
+
+          $('#player2').click(function(){
+            $('div.display2').html("<div><img src="+$(this).val()+" width=200px height=200px></div>");
           });
         });
     </script>
@@ -91,12 +39,37 @@
       <div id="back_img">
         <div id="select">
           <h1>Select Arena</h1>
-          <button id="beach">beach</button>
-          <button id="planet">planet</button>
-          <button id="dojo">dojo</button><br>
-          <button id="forest">forest</button>
-          <button id="matrix">matrix</button>
-          <button id="snow">snow</button>
+          <button id="beach" value="images/beach.jpg">beach</button>
+          <button id="planet" value="images/calvinandhobbes.jpg">planet</button>
+          <button id="dojo" value="images/dojo.jpg">dojo</button><br>
+          <button id="forest" value="images/forest.jpg">forest</button>
+          <button id="matrix" value="images/matrix.jpg">matrix</button>
+          <button id="snow" value="images/snow.jpg">snow</button>
+        </div>
+        <div id="players">
+          <h1>Select Players</h1>
+          <select id="player1">
+            <!-- <option>Player1</option> -->
+            <option value="images/player/yellow.png">Yellow Ninja</option>
+            <option value="images/player/white.png">White Ninja</option>
+            <option value="images/player/black.png">Black Ninja</option>
+            <option value="images/player/green.png">Green Ninja</option>
+            <option value="images/player/red.png">Red Ninja</option>
+            <option value="images/player/leo.jpg">Leo Ninja</option>
+          </select>
+          <select id="player2">
+            <!-- <option>Player2</option> -->
+            <option value="images/player/yellow.png">Yellow Ninja</option>
+            <option value="images/player/white.png">White Ninja</option>
+            <option value="images/player/black.png">Black Ninja</option>
+            <option value="images/player/green.png">Green Ninja</option>
+            <option value="images/player/red.png">Red Ninja</option>
+            <option value="images/player/leo.jpg">Leo Ninja</option>
+          </select>
+        </div>
+        <div id="ninja">
+          <div class="display1"></div>
+          <div class="display2"></div>
         </div>
       </div>
     </div> <!--end of wrapper-->
